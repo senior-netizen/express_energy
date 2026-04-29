@@ -1,31 +1,29 @@
 import Link from 'next/link';
-import { FuelPrice } from '@/lib/types';
 
-const tones: Record<string, string> = {
-  Petrol: 'from-emerald-400/20 to-emerald-500/5',
-  Diesel: 'from-blue-400/20 to-blue-500/5',
-  Blend: 'from-amber-400/25 to-amber-500/10'
-};
+const cards = [
+  ['Unleaded Petrol', 'ZWG 45.00', 'USD 1.52'],
+  ['Diesel 50', 'ZWG 43.00', 'USD 1.49'],
+  ['LP Gas', 'ZWG 40.00', 'USD 1.40 (per kg)'],
+  ['Lubricants & Oils', 'Ask in-store', '']
+];
 
-export function FuelPricesStrip({ prices }: { prices: FuelPrice[] }) {
+export function FuelPricesStrip() {
   return (
-    <section className='bg-brand-primary py-14 text-white'>
+    <section className='bg-brand-navy py-12 text-white'>
       <div className='container-page'>
-        <div className='flex flex-wrap items-end justify-between gap-4'>
+        <div className='flex items-center justify-between gap-4'>
           <div>
-            <h2 className='section-title text-white'>Today's Fuel Prices</h2>
-            <p className='mt-2 text-sm text-white/80'>Updated daily from our retail network.</p>
+            <h2 className='text-2xl font-semibold'>Today&apos;s Fuel Prices</h2>
+            <p className='text-sm text-white/80'>Last updated: {new Date().toLocaleString()}</p>
           </div>
-          <Link href='/fuel-prices' className='rounded-full border border-white/45 px-5 py-2 text-sm font-medium hover:bg-white/10'>
-            Full price breakdown
-          </Link>
+          <Link href='/fuel-prices' className='text-sm text-brand-orange'>View full prices →</Link>
         </div>
-        <div className='mt-6 grid gap-4 md:grid-cols-3'>
-          {prices.map((p) => (
-            <article key={p.fuelType} className={`rounded-2xl border border-white/25 bg-gradient-to-br ${tones[p.fuelType] ?? 'from-white/20 to-white/5'} p-5`}>
-              <p className='text-sm uppercase tracking-wide text-white/80'>{p.fuelType}</p>
-              <p className='mt-3 text-2xl font-semibold'>ZWG {p.zwg.toFixed(2)}</p>
-              <p className='text-sm text-white/85'>USD {p.usd.toFixed(2)}</p>
+        <div className='mt-4 grid gap-3 md:grid-cols-4'>
+          {cards.map(([title, zwg, usd]) => (
+            <article key={title} className='rounded-lg bg-white/10 p-4'>
+              <p>{title}</p>
+              <p className='price-nums mt-2 font-semibold'>{zwg}</p>
+              {usd ? <p className='price-nums text-sm text-white/90'>{usd}</p> : null}
             </article>
           ))}
         </div>
