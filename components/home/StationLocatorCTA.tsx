@@ -2,16 +2,11 @@ import Link from 'next/link';
 
 export function StationLocatorCTA({ count }: { count: number }) {
   return (
-    <section className='container-page py-14'>
-      <div className='rounded-3xl border border-brand-dark/10 bg-white p-6 shadow-[0_20px_55px_-32px_rgba(17,24,39,0.45)] md:flex md:items-center md:justify-between md:p-8'>
-        <div>
-          <p className='text-xs font-semibold uppercase tracking-[0.2em] text-brand-primary'>Station coverage</p>
-          <p className='mt-2 text-2xl font-semibold tracking-tight md:text-3xl'>{count} stations across Zimbabwe</p>
-          <p className='mt-2 text-sm text-brand-dark/70'>Locate routes, operating hours, and service extras in seconds.</p>
-        </div>
-        <Link href='/find-a-station' className='mt-5 inline-flex rounded-full bg-brand-dark px-6 py-3 text-sm font-medium text-white transition-colors duration-base ease-out-soft hover:bg-brand-secondary md:mt-0'>
-          Open station finder
-        </Link>
+    <section className='bg-brand-offwhite py-14'>
+      <div className='container-page rounded-xl bg-white p-8'>
+        <h3 className='text-3xl font-semibold text-brand-navy'>Find Your Nearest Express Energy Station</h3>
+        <p className='mt-3 text-brand-dark/80'>We have stations across Masvingo — at the CBD, Mucheke, Rhodene, and industrial areas in Masvingo and Chiredzi. ({count}+ service points)</p>
+        <Link href='/find-a-station' className='mt-5 inline-block rounded-md bg-brand-navy px-6 py-3 font-semibold text-white'>View All Stations →</Link>
       </div>
     </section>
   );

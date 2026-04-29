@@ -1,23 +1,22 @@
+import Link from 'next/link';
+
 const items = [
-  ['Fuel', 'Petrol, Diesel, Blend'],
-  ['Convenience Shop', 'Snacks, cold drinks, essentials'],
-  ['Vehicle Services', 'Car wash, tyre air, oil check'],
-  ['Send Fuel', 'Gift fuel to loved ones']
+  ['Fuel Products', 'Unleaded Petrol, Diesel 50, LP Gas, Lubricants & Oils'],
+  ['Convenience & Ice', 'Cold drinks, snacks, ice blocks, daily essentials'],
+  ['Vehicle Services', 'Windscreen cleaning and tyre air'],
+  ['Bulk Fuel', 'Exportation & transportation, contracted deliveries']
 ];
 
 export function ServicesGrid() {
   return (
-    <section className='container-page relative isolate overflow-hidden py-14'>
-      <div className='ambient-float animate-bg-drift pointer-events-none absolute -left-24 top-6 -z-10 h-64 w-64 rounded-full bg-[radial-gradient(circle,rgba(255,56,92,0.12),transparent_68%)]' style={{ animationDuration: '22s' }} />
-      <div className='ambient-float animate-glow-pulse pointer-events-none absolute -right-20 bottom-0 -z-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(70,4,121,0.1),transparent_70%)]' style={{ animationDuration: '14s', animationDelay: '3s' }} />
-      <h3 className='section-title'>At our forecourts</h3>
-      <p className='section-subtitle'>Designed for speed and comfort with every stop.</p>
+    <section className='container-page py-14'>
+      <h3 className='text-3xl font-semibold text-brand-navy'>At Our Forecourts</h3>
       <div className='mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
-        {items.map(([t, d]) => (
-          <div key={t} className='rounded-2xl border border-brand-dark/10 bg-white p-5 transition-transform duration-fast ease-spring-soft hover:-translate-y-0.5 hover:shadow-lg'>
-            <h4 className='font-semibold'>{t}</h4>
-            <p className='mt-2 text-sm text-brand-dark/70'>{d}</p>
-          </div>
+        {items.map(([title, body]) => (
+          <Link key={title} href='/services' className='rounded-xl border border-brand-navy/15 p-5 hover:bg-brand-offwhite'>
+            <h4 className='font-semibold'>{title}</h4>
+            <p className='mt-2 text-sm text-brand-dark/70'>{body}</p>
+          </Link>
         ))}
       </div>
     </section>
