@@ -27,3 +27,19 @@ body {
 .section-subtitle {
   @apply mt-2 max-w-2xl text-sm text-brand-dark/70 md:text-base;
 }
+
+.ui-transition {
+  @apply motion-safe:duration-200 motion-safe:ease-out;
+}
+
+.ui-press {
+  @apply ui-transition motion-safe:active:scale-[0.98];
+}
+
+.ui-hover-lift {
+  @apply ui-transition motion-safe:transform-gpu motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-lg;
+}
+
+.ui-focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+}
