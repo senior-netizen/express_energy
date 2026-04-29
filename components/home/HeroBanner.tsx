@@ -3,7 +3,9 @@ import Link from 'next/link';
 export function HeroBanner() {
   return (
     <section className='relative isolate overflow-hidden bg-brand-dark py-24 text-white md:py-28'>
-      <div className='absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(255,56,92,0.35),transparent_40%),radial-gradient(circle_at_80%_10%,rgba(146,23,77,0.35),transparent_38%)]' />
+      <div className='ambient-float animate-bg-drift absolute -left-24 top-[-12rem] -z-10 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(255,56,92,0.35),transparent_65%)]' style={{ animationDuration: '24s' }} />
+      <div className='ambient-float animate-glow-pulse absolute right-[-8rem] top-[-6rem] -z-10 h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(146,23,77,0.34),transparent_68%)]' style={{ animationDuration: '18s', animationDelay: '2s' }} />
+      <div className='ambient-float animate-bg-drift absolute bottom-[-14rem] left-1/3 -z-10 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(70,4,121,0.3),transparent_70%)]' style={{ animationDuration: '12s', animationDelay: '4s' }} />
       <div className='container-page'>
         <p className='inline-flex items-center rounded-full border border-white/25 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white/90'>
           Nationwide fuel network
