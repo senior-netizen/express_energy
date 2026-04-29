@@ -1,0 +1,1 @@
+export function PaymentBadges(){const badges=['EcoCash','InnBucks','Omari','Cash (USD & ZWG)']; return <div className='flex flex-wrap gap-3'>{badges.map(b=><span key={b} className='rounded-full bg-brand-light px-4 py-2 text-sm'>{b}</span>)}</div>}
