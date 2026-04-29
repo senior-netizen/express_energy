@@ -13,8 +13,8 @@ export function Navbar() {
           {links.map((l) => (
             <li key={l}>
               <Link
-                className={`ui-focus-ring ui-press ui-hover-lift rounded-full px-4 py-2 text-sm capitalize motion-safe:transition ${
-                  l === 'send-fuel' ? 'bg-brand-primary font-semibold text-white' : 'text-brand-dark hover:bg-brand-light'
+                className={`rounded-full px-4 py-2 text-sm capitalize transition-colors duration-base ease-out-soft ${
+                  l === 'send-fuel' ? 'bg-brand-primary text-white font-semibold' : 'text-brand-dark hover:bg-brand-light'
                 }`}
                 href={`/${l}`}
               >
