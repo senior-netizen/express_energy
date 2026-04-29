@@ -6,7 +6,7 @@ export function Navbar() {
   return (
     <header className='sticky top-0 z-50 border-b border-brand-dark/10 bg-white/90 backdrop-blur'>
       <nav className='container-page flex h-20 items-center justify-between'>
-        <Link href='/' className='text-lg font-semibold tracking-tight'>
+        <Link href='/' className='ui-focus-ring ui-press ui-hover-lift rounded-md text-lg font-semibold tracking-tight motion-safe:transition'>
           Express Energy
         </Link>
         <ul className='hidden items-center gap-2 md:flex'>
