@@ -1,0 +1,2 @@
+const items=[['Fuel','Petrol, Diesel, Blend'],['Convenience Shop','Snacks, cold drinks, essentials'],['Vehicle Services','Car wash, tyre air, oil check'],['Send Fuel','Gift fuel to loved ones']];
+export function ServicesGrid(){return <section className='container-page py-12'><h3 className='text-2xl font-semibold'>At our forecourts</h3><div className='mt-4 grid gap-4 md:grid-cols-4'>{items.map(([t,d])=><div key={t} className='rounded-lg border p-4'><h4 className='font-semibold'>{t}</h4><p className='text-sm'>{d}</p></div>)}</div></section>}

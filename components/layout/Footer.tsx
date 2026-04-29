@@ -1,0 +1,1 @@
+export function Footer(){return <footer className='mt-12 bg-brand-light py-10'><div className='container-page text-sm'>© {new Date().getFullYear()} Express Energy. All rights reserved.</div></footer>}

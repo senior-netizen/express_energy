@@ -1,0 +1,1 @@
+export default function Page(){return <main className='container-page py-10'><h1 className='text-3xl font-semibold capitalize'>services</h1><p className='mt-2'>Content scaffold for services page.</p></main>}

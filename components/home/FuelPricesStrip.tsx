@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import { FuelPrice } from '@/lib/types';
+export function FuelPricesStrip({prices}:{prices:FuelPrice[]}){return <section className='bg-brand-primary py-8 text-white'><div className='container-page'><h2 className='text-2xl font-semibold'>Today\'s Fuel Prices</h2><div className='mt-4 grid gap-3 md:grid-cols-3'>{prices.map(p=><article key={p.fuelType} className='rounded-lg bg-white/15 p-4'><p>{p.fuelType}</p><p>ZWG {p.zwg.toFixed(2)}</p><p>USD {p.usd.toFixed(2)}</p></article>)}</div><Link href='/fuel-prices' className='mt-4 inline-block underline'>View full price breakdown →</Link></div></section>}

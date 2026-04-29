@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export function DiasporaBanner(){return <section className='bg-brand-secondary py-12 text-white'><div className='container-page'><h3 className='text-2xl font-semibold'>Family abroad? They can send you fuel.</h3><p className='mt-3'>Diaspora customers can purchase fuel for loved ones in Zimbabwe via EcoCash and InnBucks vouchers.</p><Link href='/send-fuel' className='mt-4 inline-block rounded-full bg-brand-primary px-5 py-2'>How it works →</Link></div></section>}

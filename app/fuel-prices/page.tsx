@@ -1,0 +1,2 @@
+import { PriceCard } from '@/components/fuel-prices/PriceCard';
+export default function FuelPricesPage(){const prices=[{fuelType:'Petrol',zwg:45,usd:1.52,updatedAt:''},{fuelType:'Diesel',zwg:43,usd:1.49,updatedAt:''},{fuelType:'Blend',zwg:40,usd:1.4,updatedAt:''}] as const; return <main className='container-page py-10'><h1 className='text-3xl font-semibold'>Fuel Prices</h1><div className='mt-4 grid gap-4 md:grid-cols-3'>{prices.map((p)=> <PriceCard key={p.fuelType} price={p}/>)}</div></main>}

@@ -1,0 +1,1 @@
+export function PartnersStrip(){return <section className='bg-brand-light py-10'><div className='container-page'><h3 className='text-xl'>In partnership with</h3><div className='mt-3 flex gap-4 text-gray-500'><span>TFN</span><span>Petrotrade</span></div></div></section>}
