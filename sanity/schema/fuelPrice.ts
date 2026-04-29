@@ -1,0 +1,2 @@
+import { defineField, defineType } from 'sanity';
+export default defineType({name:'fuelPrice',title:'Fuel Price',type:'document',fields:[defineField({name:'fuelType',type:'string',options:{list:['Petrol','Diesel','Blend']},validation:r=>r.required()}),defineField({name:'zwg',type:'number',validation:r=>r.required().positive()}),defineField({name:'usd',type:'number',validation:r=>r.required().positive()})]});

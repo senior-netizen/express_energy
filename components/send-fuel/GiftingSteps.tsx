@@ -1,0 +1,1 @@
+export function GiftingSteps(){const steps=['Choose amount','Pay with EcoCash/InnBucks','Recipient redeems at station'];return <ol className='list-decimal space-y-2 pl-5'>{steps.map(s=><li key={s}>{s}</li>)}</ol>}
