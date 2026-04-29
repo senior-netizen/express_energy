@@ -9,7 +9,7 @@ export function StationLocatorCTA({ count }: { count: number }) {
           <p className='mt-2 text-2xl font-semibold tracking-tight md:text-3xl'>{count} stations across Zimbabwe</p>
           <p className='mt-2 text-sm text-brand-dark/70'>Locate routes, operating hours, and service extras in seconds.</p>
         </div>
-        <Link href='/find-a-station' className='mt-5 inline-flex rounded-full bg-brand-dark px-6 py-3 text-sm font-medium text-white transition hover:bg-brand-secondary md:mt-0'>
+        <Link href='/find-a-station' className='mt-5 inline-flex rounded-full bg-brand-dark px-6 py-3 text-sm font-medium text-white transition-colors duration-base ease-out-soft hover:bg-brand-secondary md:mt-0'>
           Open station finder
         </Link>
       </div>

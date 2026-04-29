@@ -543,3 +543,41 @@ There are no progressive elevation tiers — the system either has the one shado
 - **Map view styling:** the search-results map uses Mapbox-tinted tiles with custom Rausch markers; not captured here.
 - **Form input error states:** error text color (`{colors.primary-error-text}`) is documented, but the full input outline + helper-text combination on validation failure was not visible in the captured surfaces.
 - **Sub-brand palettes:** Luxe (`{colors.luxe}`) and Plus (`{colors.plus}`) are documented as tokens, but their full sub-system (typography overrides, surface treatment) lives on separate sub-domains and is not captured here.
+
+motion:
+  tokens:
+    durations:
+      fast: 150ms
+      base: 250ms
+      slow: 400ms
+    easings:
+      out-soft: cubic-bezier(0.22, 1, 0.36, 1)
+      spring-soft: cubic-bezier(0.34, 1.56, 0.64, 1)
+    animations:
+      shimmer: "2.2s linear infinite"
+      float: "3.6s ease-in-out infinite"
+      drift: "7s ease-in-out infinite"
+  guidelines:
+    when-to-animate:
+      - Use motion to clarify state changes (hover, focus, reveal, loading), not as decoration.
+      - Prioritize feedback on interactive controls and subtle emphasis on important content.
+      - Avoid perpetual motion on dense data or reading-heavy surfaces.
+    max-movement-distances:
+      hover-lift: "<= 2px translateY"
+      decorative-float: "<= 6px translateY"
+      decorative-drift: "<= 10px horizontal and <= 4px vertical"
+      note: "Keep movement small to preserve readability and prevent motion fatigue."
+    reduced-motion-policy:
+      - Respect `prefers-reduced-motion: reduce` for all non-essential animations.
+      - Replace looping/decorative motion with static styles or opacity-only transitions.
+      - Keep essential transitions short and non-spatial under reduced motion.
+
+pr-motion-checklist:
+  performance:
+    - Confirm transitions animate `transform` and `opacity` where possible.
+    - Avoid layout-triggering animation of `top/left/width/height` in interactive loops.
+    - Ensure infinite animations are decorative-only and used sparingly.
+  accessibility:
+    - Verify motion is not required to understand content or complete tasks.
+    - Check keyboard and focus states remain clear with motion enabled.
+    - Validate reduced-motion behavior (`prefers-reduced-motion`) on updated components.

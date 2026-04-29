@@ -13,10 +13,10 @@ export function HeroBanner() {
           Reliable fuel, modern payments, and trusted nationwide service with transparent prices and fast digital gifting.
         </p>
         <div className='mt-8 flex flex-col gap-3 md:flex-row'>
-          <Link href='/fuel-prices' className='rounded-full bg-brand-primary px-7 py-3 text-center font-medium transition hover:brightness-95'>
+          <Link href='/fuel-prices' className='rounded-full bg-brand-primary px-7 py-3 text-center font-medium transition-all duration-fast ease-out-soft hover:brightness-95'>
             View Fuel Prices
           </Link>
-          <Link href='/find-a-station' className='rounded-full border border-white/60 px-7 py-3 text-center font-medium transition hover:bg-white/10'>
+          <Link href='/find-a-station' className='rounded-full border border-white/60 px-7 py-3 text-center font-medium transition-colors duration-base ease-out-soft hover:bg-white/10'>
             Find a Station
           </Link>
         </div>
