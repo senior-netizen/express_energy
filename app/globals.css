@@ -28,18 +28,53 @@ body {
   @apply mt-2 max-w-2xl text-sm text-brand-dark/70 md:text-base;
 }
 
-.ui-transition {
-  @apply motion-safe:duration-200 motion-safe:ease-out;
+@keyframes bgDrift {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate3d(2%, 1%, 0) scale(1.04);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+    opacity: 0.3;
+  }
 }
 
-.ui-press {
-  @apply ui-transition motion-safe:active:scale-[0.98];
+@keyframes glowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
 }
 
-.ui-hover-lift {
-  @apply ui-transition motion-safe:transform-gpu motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-lg;
+.ambient-float {
+  will-change: transform, opacity;
 }
 
-.ui-focus-ring {
-  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+.animate-bg-drift {
+  animation: bgDrift var(--ambient-duration, 16s) ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse var(--ambient-duration, 20s) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bg-drift,
+  .animate-glow-pulse {
+    animation: none;
+    opacity: 0.25;
+    transform: none;
+  }
 }
